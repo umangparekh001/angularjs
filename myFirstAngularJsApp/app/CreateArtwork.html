@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Artwork</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
+    <link rel="script" href="components/bootstrap-datepicker.js">
+    <link rel="stylesheet" href="components/datepicker.css">
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span2">
+    <div  class="col-sm-2 navigationPadding">
+        <div class="list-group">
+            <a href="#" class="list-group-item small active">Add Artwork Information</a>
+            <a href="#" class="list-group-item small">Printed Physical Posters<span class="badge">5</span></a>
+            <a href="#" class="list-group-item small">Still Photos</a>
+        </div>
+    </div>
+        </div>
+        <div class="span10">
+    <div  class="col-sm-10 paddingLeftZero">
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h4 class="panel-title">Create Artwork</h4>
+        </div>
+        <div class="panel-body">
+
+            <form  ng-app="myApp"  ng-controller="validateCtrl"
+                   name="myForm" novalidate>
+
+            <div class="row formPadding">
+            <div class="col-sm-2 small">
+            <label class="text-primary"> From </label>
+            </div>
+            <div class="col-sm-4 small">
+                <label> hosuser1 </label>
+            </div>
+            <div class="col-sm-2 small">
+                <label class="text-primary"> Project Created Date </label>
+            </div>
+            <div class="col-sm-4 small">
+                <label> 07-11-2015 </label>
+            </div>
+        </div>
+        <div class="row formPadding" >
+            <div class="col-sm-2 small">
+                <label class="text-primary"> Workflow Group </label>
+
+            </div>
+            <div class="col-sm-4">
+                <select name="workflowGrpCmb" class="form-control input-sm"  ng-model="data.singleSelect">
+                    <option value="option-1">Option 1</option>
+                    <option value="option-2">Option 2</option>
+                </select>
+            </div>
+            <div class="col-sm-2">
+                <label class="text-primary small"> Status </label>
+            </div>
+            <div class="col-sm-4">
+                <select name="statusCmb" class="form-control input-sm"  ng-model="data.singleSelect">
+                    <option value="option-1">Option 1</option>
+                    <option value="option-2">Option 2</option>
+                </select>
+            </div>
+        </div>
+        <div class="row formPadding">
+            <div class="col-sm-2 ">
+                <label class="text-primary small"> Title </label>
+
+            </div>
+            <div class="col-sm-4">
+                    <input type="text" class="form-control input-sm" placeholder="Title" aria-describedby="sizing-addon3">
+
+            </div>
+            <div class="col-sm-2">
+                <label class="text-primary small"> Anticipated Due Date </label>
+            </div>
+            <div class="col-sm-4">
+                <input  class="form-control input-sm" type="date" name="bday">
+            </div>
+        </div>
+        <div class="row formPadding" >
+            <div class="col-sm-2">
+                <label class="text-primary small"> Studio/Licensor </label>
+
+            </div>
+            <div class="col-sm-4">
+                <label class="radio-inline small"><input type="radio" name="optradio">Studio</label>
+                <label class="radio-inline small"><input type="radio" name="optradio">Licensor</label>
+            </div>
+            <div class="col-sm-2">
+                <label class="text-primary small"> Contractual Due Date </label>
+            </div>
+            <div class="col-sm-4">
+                <input class="form-control input-sm" type="date"  name="bday">
+            </div>
+        </div>
+        <div class="row formPadding">
+            <div class="col-sm-2">
+                <label class="text-primary small"> Licensor </label>
+
+            </div>
+            <div class="col-sm-4">
+                <select name="licensorCmb" class="form-control input-sm"  ng-model="data.singleSelect">
+                    <option value="option-1">Option 1</option>
+                    <option value="option-2">Option 2</option>
+                </select>
+            </div>
+            <div class="col-sm-2">
+                <label class="text-primary small"> Contract Administrator </label>
+            </div>
+            <div class="col-sm-4">
+                <select name="contractAdminCmb" class="form-control input-sm" ng-model="data.singleSelect">
+                    <option value="option-1">Option 1</option>
+                    <option value="option-2">Option 2</option>
+                </select>
+            </div>
+        </div>
+        <div class="row formPadding">
+            <div class="col-sm-2">
+                <label class="text-primary small"> Email Addresses </label>
+
+            </div>
+            <div class="col-sm-4">
+                <select multiple class="form-control input-sm" id="sel2">
+                    <option>  <label class="text-primary small"> Contract Administrator </label> |  <label class="text-primary input-sm"> Contract Administrator </label></option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="col-sm-2">
+                <label class="text-primary small"> Asset Type / Contract Quantity </label>
+            </div>
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <select  class="form-control input-sm" name="licensorCmb" ng-model="data.singleSelect">
+                            <option value="option-1">Printed Physical Posters</option>
+                            <option value="option-2">Still Photos</option>
+                            <option value="option-2">Others</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4 ">
+                        <input class="form-control input-sm" id="quantityId1" type="text" >
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <select  class="form-control input-sm" name="licensorCmb" ng-model="data.singleSelect">
+                            <option value="option-1">Printed Physical Posters</option>
+                            <option value="option-2">Still Photos</option>
+                            <option value="option-2">Others</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <input class="form-control input-sm" id="quantityId2" type="text" >
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <select  class="form-control input-sm" name="licensorCmb" ng-model="data.singleSelect">
+                            <option value="option-1" title="Printed Physical Posters" >Printed Physical Posters</option>
+                            <option value="option-2" title="Still Photos">Still Photos</option>
+                            <option value="option-2">Others</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <input  class="form-control input-sm" id="quantityId3" type="text" >
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row formPadding" >
+            <div class="col-sm-12" >
+                <label class="text-primary input-sm"> Add Comment / Add Attachment </label>
+                <button type="button" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-plus"></span> Add Comment
+                </button>
+            </div>
+            <div class="col-sm-12">
+                <textarea class="form-control input-sm" rows="1" id="comment"></textarea>
+            </div>
+
+        </div>
+        <div class="row formPadding" >
+            <div class="col-sm-12">
+                <label class="text-primary small"> Print Comments </label>
+            </div>
+            <div class="col-sm-12">
+                <textarea class="form-control input-sm" rows="4" id="printComment"></textarea>
+            </div>
+
+        </div>
+                </form>
+        <div class="row formPadding" >
+            <ul class="pager">
+                <li class="previous input-sm disabled"><a href="#"><span aria-hidden="true">&larr;</span> Previous</a></li>
+                <button type="button" class="btn btn-primary input-sm">
+                    <span class="glyphicon glyphicon-save"></span> Submit
+                </button>
+                <li class="next input-sm" ><a href="#">Next</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+</div>
+        </div>
+</div>
+</body>
+</html>
